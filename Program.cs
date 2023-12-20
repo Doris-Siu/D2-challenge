@@ -16,6 +16,10 @@ while (true)
     Console.WriteLine("6. Insert a node after a specified node");
     Console.WriteLine("7. Insert a node before a specified node");
     Console.WriteLine("8. Insert a node at a specified position");
+    Console.WriteLine("9.Delete the first node");
+    Console.WriteLine("10.Delete the last node");
+    Console.WriteLine("11.Delete any given node");
+
 
 
 
@@ -84,6 +88,22 @@ while (true)
             k = int.Parse(Console.ReadLine());
 
             list.InsertAtPosition(data,k);
+            break;
+
+        case 9:
+            list.DeleteFirstNode();
+            break;
+
+        case 10:
+            list.DeleteLastNode();
+            break;
+
+        case 11:
+            Console.Write("Enter the node to be deleted: ");
+            data = int.Parse(Console.ReadLine());
+
+
+            list.DeleteNode(data);
             break;
 
         default:

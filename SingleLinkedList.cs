@@ -150,6 +150,82 @@ namespace D2_challenge
 
         }
 
+        // node deletion
+        public void DeleteFirstNode()
+        {
+            if (_start==null)
+            {
+                return;
+            }
+
+            if (_start.next == null) // the only node
+            {
+                _start = null;
+                return;
+            }
+
+            _start = _start.next;
+        }
+
+        public void DeleteLastNode()
+        {
+            if (_start == null)
+            {
+                return;
+            }
+
+            if (_start.next==null) // the only node
+            {
+                _start = null;
+                return;
+            }
+
+            Node p = _start;
+            while (p.next.next!=null)
+            {
+                p = p.next;
+            }
+
+            p.next = null;
+
+        }
+
+        public void DeleteNode(int x)
+        {
+            if (_start == null)
+            {
+                return;
+            }
+
+            if (_start.element==x)
+            {
+                _start = _start.next;
+                return;
+            }
+
+            Node p = _start;
+            while (p.next!=null)
+            {
+                if (p.next.element==x)
+                {
+                    break;
+                }
+                p = p.next;
+        
+            }
+
+            if (p.next==null)
+            {
+                Console.WriteLine("Element " + x + " not in the list");
+
+            }
+            else
+            {
+                p.next = p.next.next;
+            }
+
+        }
+
 
         public void CreateList()
         {
