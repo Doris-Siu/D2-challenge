@@ -64,13 +64,66 @@ namespace D2_challenge
 
         public void DisplayList()
 		{
+            Node p;
+            if (_start ==null)
+            {
+                Console.WriteLine("Empty list.");
+                return;
+            }
+            Console.WriteLine("List is : " );
+
+            p = _start;
+            while (p!=null)
+            {
+                Console.Write(p.element+" ");
+                p = p.next;
+            }
 
 		}
 
-        public int CountNodes()
+        public void CountNodes()
 		{
-			return 0;
-		}
+            int counter = 0;
+            Node p = _start;
+
+            while (p!=null)
+            {
+                counter++;
+                p = p.next;
+            }
+
+            Console.WriteLine("Number of nodes in the list is " + counter);
+        }
+
+        public bool Search (int x)
+        {
+            int position = 1;
+            Node p = _start;
+
+            while (p!=null)
+            {
+                if (p.element==x)
+                {
+                    break;
+
+                }
+
+                position++;
+                p = p.next;
+            }
+
+            if (p==null)
+            {
+                Console.WriteLine(x + " is not found in list");
+                return false;
+                
+            }
+            else
+            {
+                Console.WriteLine(x+" is at position " + position);
+                return true;
+            }
+        }
 
 
     }

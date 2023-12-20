@@ -32,6 +32,12 @@ while (true)
             list.CountNodes();
             break;
 
+        case 3:
+            Console.Write("Enter the element to be searched: ");
+            data = int.Parse(Console.ReadLine());
+            list.Search(data);
+            break;
+
         default:
             Console.WriteLine("Invalid choice");
             break;
