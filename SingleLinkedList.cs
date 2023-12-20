@@ -41,6 +41,115 @@ namespace D2_challenge
             p.next = temp;
         }
 
+        public void InsertAfter(int data, int x)
+
+        {
+            if (_start == null)
+            {
+                Console.WriteLine("Empty List.");
+                return;
+            }
+
+            Node p = _start;
+
+            while (p!=null)
+            {
+                if (p.element==x)
+                {
+                    break;
+                }
+
+                p = p.next;
+
+            }
+
+            if (p==null)
+            {
+                Console.WriteLine(x + " is not presented in the list");
+            }
+            else
+            {
+                Node temp = new Node(data);
+                temp.next = p.next;
+                p.next = temp;
+            }
+        }
+
+        public void InsertBefore(int data, int x)
+        {
+            Node temp;
+
+            if (_start==null)
+            {
+                Console.WriteLine("Empty List.");
+                return;
+            }
+            if (x==_start.element) //x is the 1st node
+            {
+                temp = new Node(data);
+                temp.next = _start;
+                _start = temp;
+                return;
+            }
+
+            //find predecessor of x
+            Node p = _start;
+            while (p.next!=null)
+            {
+                if (p.next.element == x)
+                {
+                    break;
+                }
+                p = p.next;
+
+            }
+
+            if (p.next == null)
+            {
+                Console.WriteLine(x + " is not presented in the list");
+            }
+            else
+            {
+                temp = new Node(data);
+                temp.next = p.next;
+                p.next = temp;
+            }
+        }
+
+        public void InsertAtPosition(int data, int k)
+        {
+            Node temp;
+            int i;
+
+            if (k==1)
+            {
+                temp = new Node(data);
+                temp.next = _start;
+                _start = temp;
+                return;
+            }
+
+            Node p = _start;
+            for ( i = 1; i < k-1 && p!=null; i++)
+            {
+                p = p.next;
+
+            }
+
+            if (p==null)
+            {
+                Console.WriteLine("You can only insert up to " + i + "th position");
+            }
+            else
+            {
+                temp = new Node(data);
+                temp.next = p.next;
+                p.next = temp;
+            }
+
+
+        }
+
 
         public void CreateList()
         {
@@ -55,6 +164,7 @@ namespace D2_challenge
             for (i = 1; i <= n; i++)
             {
                 Console.Write("Enter the element to be inserted : ");
+
                 data = Convert.ToInt32(Console.ReadLine());
                 InsertAtEnd(data);
             }

@@ -63,7 +63,7 @@ namespace D2_challenge
         {
             Node p = _start;
 
-            for (int i = 1; i < k; i++)
+            for (int i = 1; i < k  && p!= null; i++)
             {
                 p = p.next;
             }
