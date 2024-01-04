@@ -8,5 +8,14 @@ Covered:
 - Practicing linked list operations like finding a node, removing a node, and merging linked lists
 - Reviewing and refining understanding of linked lists
 
+Day 5,7:
+
+Covered:
+- Comprehensive review of linked lists
+- Delving into doubly linked lists, circular linked lists, and self-referential linked lists
+  
+
+
+
 
 
